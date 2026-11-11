@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 from django.utils.translation import gettext_lazy as _
@@ -5,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
 BASE_DIR = Path(__file__).resolve().parents[3]
 CONTENT_DIR = BASE_DIR / "content"
 
-SECRET_KEY = "3d305kajG5Jy8KBafCMpHwDIsNi0SqVaW"
+SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 
 DEBUG = False
 ALLOWED_HOSTS = [
