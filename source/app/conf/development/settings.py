@@ -1,3 +1,4 @@
+import os
 import warnings
 from pathlib import Path
 
@@ -8,7 +9,7 @@ warnings.simplefilter("error", DeprecationWarning)
 BASE_DIR = Path(__file__).resolve().parents[3]
 CONTENT_DIR = BASE_DIR / "content"
 
-SECRET_KEY = "NhfTvayqggTBPswCXXhWaN69HuglgZIkM"
+SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 
 DEBUG = True
 ALLOWED_HOSTS = ["*"]
